@@ -1,0 +1,62 @@
+<html>
+<head>
+<style>
+  /* Style the buttons */
+  .btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  /* Green button */
+  .yes {
+    color: green;
+  }
+
+  /* Red button */
+  .no {
+    color: red;
+  }
+
+  /* Center the question and the buttons */
+  .container {
+    text-align: center;
+  }
+</style>
+<script>
+  // Get the buttons and the message elements
+  var yesBtn = document.getElementById("yes");
+  var noBtn = document.getElementById("no");
+  var msg = document.getElementById("msg");
+
+  // Add a click event listener to the yes button
+  yesBtn.addEventListener("click", function() {
+    // Change the message to thank the user
+    msg.innerHTML = "Thanks, love you. You won't regret it.";
+    // Hide the buttons
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+  });
+
+  // Add a click event listener to the no button
+  noBtn.addEventListener("click", function() {
+    // Move the button to a random position
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random() * window.innerWidth + "px";
+    noBtn.style.top = Math.random() * window.innerHeight + "px";
+  });
+</script>
+</head>
+<body>
+<div class="container">
+  <!-- Display the question -->
+  <h1 id="msg">I am sorry, can you forgive me?</h1>
+  <!-- Display the buttons -->
+  <button class="btn yes" id="yes">Yes</button>
+  <button class="btn no" id="no">No</button>
+</div>
+</body>
+</html>
